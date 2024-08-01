@@ -5,12 +5,16 @@ import { Button } from "@/components/ui/button";
 
 const ExistingPlatforms = () => {
   return (
-    <section className="container block-space">
+    <section className="container block-space grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
         <h2>Integrate with your existing platforms</h2>
-        <span>
-          Integrate Siena with your help desk in 1click and start using your autonomous customer service with minimal setup. Get your AI superhuman up and running 90% faster and more efficient than the average automation tools.
-        </span>
+        <p>
+          Integrate Siena with your help desk with one click and start using
+          your autonomous customer service with minimal setup. Get your AI
+          superhuman up and running 90% faster and more efficient than the
+          average automation tools.
+        </p>
+
         <Button>Coming Soon</Button>
       </div>
       <div>

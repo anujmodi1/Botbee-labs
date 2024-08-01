@@ -1,7 +1,11 @@
+import BenefitSection from "@/components/sections/home/Benefits";
+import ClientsSection from "@/components/sections/home/Clients";
 import ConsultationSection from "@/components/sections/home/Consultation";
 import ExistingPlatforms from "@/components/sections/home/ExistingPlatforms";
 import HeroSection from "@/components/sections/home/HeroSection";
+import MakesDifferent from "@/components/sections/home/MakesDifferent";
 import MeetOurTeam from "@/components/sections/home/MeetOurTeam";
+import SetUpAvatar from "@/components/sections/home/SetUpAvatar";
 import SetupProcess from "@/components/sections/home/SetupProcess";
 import WorldMapSection from "@/components/sections/home/WorldMap";
 import Image from "next/image";
@@ -11,6 +15,10 @@ export default function Home() {
   return (
     <React.Fragment>
       <HeroSection />
+      <MakesDifferent />
+      <SetUpAvatar />
+      <BenefitSection />
+      <ClientsSection />
       <SetupProcess />
       <MeetOurTeam />
       <ExistingPlatforms />

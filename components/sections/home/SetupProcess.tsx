@@ -2,7 +2,13 @@ import Image from "next/image";
 import React from "react";
 import IconGrid from "@/public/IconGrid.png";
 import One from "@/public/1.png";
+import Two from "@/public/2.png";
+import Three from "@/public/3.png";
+import Four from "@/public/4.png";
+import PdfCircle from "@/public/pdfCircle.png";
+import MeetTeam from "@/public/MeetTeamNull.png";
 import { cn } from "@/lib/utils";
+import ChatGirl from "@/public/ChatGirl.png";
 
 const SetupProcess = () => {
   return (
@@ -16,16 +22,28 @@ const SetupProcess = () => {
         </span>
 
         <GridItem
-          heading="Choose your preferable language from the huge language library"
-          image={IconGrid}
-          backgroundImage={One}
-        />
-
-        <GridItem
-          heading="Choose your preferable language from the huge language library"
+          heading="Pick your favourite Avatar based on your preference"
           image={IconGrid}
           backgroundImage={One}
           imageLeft={false}
+        />
+
+        <GridItem
+          heading="Pick your favourite Avatar based on your preference"
+          image={MeetTeam}
+          backgroundImage={Two}
+        />
+
+        <GridItem
+          heading="Test your avatar and copy the link to upload in your website"
+          image={PdfCircle}
+          backgroundImage={Three}
+          imageLeft={false}
+        />
+        <GridItem
+          heading="Test your avatar and copy the link to upload in your website"
+          image={ChatGirl}
+          backgroundImage={Four}
         />
       </div>
     </section>
