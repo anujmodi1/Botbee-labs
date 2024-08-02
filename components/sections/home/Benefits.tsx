@@ -4,18 +4,21 @@ import BenefitsLeft from "@/public/BenefitsLeft.png";
 
 const BenefitSection = () => {
   return (
-    <section className="block-space container grid grid-cols-1 md:grid-cols-2 gap-4">
+    <section className="block-space big-container grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
         <Image src={BenefitsLeft} alt="" />
       </div>
-      <div>
-        <h2>A Top-notch Product with Interesting Benefits </h2>
-        <span>
+      <div className="space-y-4 md:space-y-6 lg:space-y-8">
+        <h2>
+          <span className="text-blue">A Top-notch Product</span> with <br />
+          Interesting Benefits{" "}
+        </h2>
+        <p>
           By automating customer support with AI avatars, businesses can
           significantly reduce the costs associated with hiring and training
           multilingual support staff.
-        </span>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <GridItem
             heading="50%"
             tagline="Average Cost Savings"

@@ -5,6 +5,7 @@ import ExistingPlatforms from "@/components/sections/home/ExistingPlatforms";
 import HeroSection from "@/components/sections/home/HeroSection";
 import MakesDifferent from "@/components/sections/home/MakesDifferent";
 import MeetOurTeam from "@/components/sections/home/MeetOurTeam";
+import SecondaryHeroSection from "@/components/sections/home/SecondaryHero";
 import SetUpAvatar from "@/components/sections/home/SetUpAvatar";
 import SetupProcess from "@/components/sections/home/SetupProcess";
 import WorldMapSection from "@/components/sections/home/WorldMap";
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <React.Fragment>
       <HeroSection />
+      <SecondaryHeroSection />
       <MakesDifferent />
       <SetUpAvatar />
       <BenefitSection />
