@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 import IconGrid from "@/public/IconGrid.png";
 import One from "@/public/1.png";
 import Two from "@/public/2.png";
@@ -10,11 +12,104 @@ import MeetTeam from "@/public/MeetTeamNull.png";
 import { cn } from "@/lib/utils";
 import ChatGirl from "@/public/ChatGirl.png";
 
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const SetupProcess = () => {
+  const container = useRef(null);
+  const boxes = gsap.utils.toArray(".box") as gsap.TweenTarget[];
+  const evenBoxes = gsap.utils.toArray(".box-even") as gsap.TweenTarget[];
+  const oddBoxes = gsap.utils.toArray(".box-odd") as gsap.TweenTarget[];
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".box-1",
+        {
+          opacity: 0,
+          x: -100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: ".box-1",
+            start: "top bottom",
+            end: "bottom top",
+            toggleActions: "restart pause resume pause",
+          },
+        }
+      );
+      gsap.fromTo(
+        ".box-2",
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: ".box-2",
+            start: "top bottom",
+            end: "bottom top",
+            toggleActions: "restart pause resume pause",
+          },
+        }
+      );
+      gsap.fromTo(
+        ".box-3",
+        {
+          opacity: 0,
+          x: -100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: ".box-3",
+            start: "top bottom",
+            end: "bottom top",
+            toggleActions: "restart pause resume pause",
+          },
+        }
+      );
+      gsap.fromTo(
+        ".box-4",
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.inOut",
+          scrollTrigger: {
+            trigger: ".box-4",
+            start: "top bottom",
+            end: "bottom top",
+            toggleActions: "restart pause resume pause",
+          },
+        }
+      );
+    },
+    { scope: container }
+  );
+
   return (
-    <section className="bg-mainDark text-white block-space">
-      <div className="container">
-        <div className="text-center mb-6 md:mb-8 lg:mb-12 space-y-4">
+    <section className="bg-mainDark text-white block-space-large overflow-hidden">
+      <div className="container" ref={container}>
+        <div className="animate-content text-center mb-6 md:mb-8 lg:mb-12 space-y-4">
           <h2>Easy to setup Process</h2>
           <span className="block text-customMuted text-sm">
             Step by step process to train your Avatar. Select your preferable
@@ -30,12 +125,14 @@ const SetupProcess = () => {
             image={IconGrid}
             backgroundImage={One}
             imageLeft={false}
+            classname="box-1 box-odd box"
           />
 
           <GridItem
             heading="Pick your favourite Avatar based on your preference"
             image={MeetTeam}
             backgroundImage={Two}
+            classname="box-2 box-even box"
           />
 
           <GridItem
@@ -43,11 +140,13 @@ const SetupProcess = () => {
             image={PdfCircle}
             backgroundImage={Three}
             imageLeft={false}
+            classname="box-3 box-odd box"
           />
           <GridItem
             heading="Test your avatar and copy the link to upload in your website"
             image={ChatGirl}
             backgroundImage={Four}
+            classname="box-4 box-even box"
           />
         </div>
       </div>
@@ -62,11 +161,13 @@ function GridItem({
   image,
   backgroundImage,
   imageLeft = true,
+  classname,
 }: {
   heading: string;
   image: any;
   backgroundImage: any;
   imageLeft?: boolean;
+  classname?: string;
 }) {
   return (
     <div
@@ -74,7 +175,8 @@ function GridItem({
         "flex flex-col md:flex-row items-center gap-4 md:gap-8 lg:gap-12",
         {
           "md:flex-row-reverse": !imageLeft,
-        }
+        },
+        classname
       )}
     >
       <div className="flex-1 p-4">
