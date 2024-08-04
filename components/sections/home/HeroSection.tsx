@@ -7,7 +7,7 @@ import AvatarHeroGroup from "@/public/AvatarHeroGroup.png";
 
 const HeroSection = () => {
   return (
-    <section className="block-space bg-mainDark text-white">
+    <section className="block-space-large bg-mainDark text-white">
       <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="content-center space-y-4">
           <span className="flex items-center gap-2">

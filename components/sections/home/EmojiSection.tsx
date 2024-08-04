@@ -133,15 +133,6 @@ const EmojiSection = () => {
 
 export default EmojiSection;
 
-function EmojiCard() {
-  return (
-    <div className="flex gap-2 items-center">
-      <div className="rounded-full border-2 p-2">😋</div>
-      <div className="rounded-full border-2 px-4 py-2">Smart</div>
-    </div>
-  );
-}
-
 function EmojiCardData({
   emoji,
   label,
