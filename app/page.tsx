@@ -1,6 +1,7 @@
 import BenefitSection from "@/components/sections/home/Benefits";
 import ClientsSection from "@/components/sections/home/Clients";
 import ConsultationSection from "@/components/sections/home/Consultation";
+import EmojiSection from "@/components/sections/home/EmojiSection";
 import ExistingPlatforms from "@/components/sections/home/ExistingPlatforms";
 import HeroSection from "@/components/sections/home/HeroSection";
 import MakesDifferent from "@/components/sections/home/MakesDifferent";
@@ -18,6 +19,7 @@ export default function Home() {
       <HeroSection />
       <SecondaryHeroSection />
       <MakesDifferent />
+      <EmojiSection />
       <SetUpAvatar />
       <BenefitSection />
       <ClientsSection />
