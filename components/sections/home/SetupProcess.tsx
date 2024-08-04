@@ -20,9 +20,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SetupProcess = () => {
   const container = useRef(null);
-  const boxes = gsap.utils.toArray(".box") as gsap.TweenTarget[];
-  const evenBoxes = gsap.utils.toArray(".box-even") as gsap.TweenTarget[];
-  const oddBoxes = gsap.utils.toArray(".box-odd") as gsap.TweenTarget[];
 
   useGSAP(
     () => {
