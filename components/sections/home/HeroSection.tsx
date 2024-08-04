@@ -1,15 +1,76 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { LucideAtom } from "lucide-react";
-import React from "react";
+import React, { useRef } from "react";
 import Placeholder from "@/public/placeholder.png";
 import Image from "next/image";
 import AvatarHeroGroup from "@/public/AvatarHeroGroup.png";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      let t1 = gsap.timeline();
+
+      t1.fromTo(
+        ".main-content",
+        {
+          opacity: 0,
+          x: -100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 1,
+          ease: "power2.inOut",
+        }
+      );
+
+      t1.fromTo(
+        ".animate-image",
+        {
+          opacity: 0,
+          x: 100,
+        },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.5,
+          ease: "power2.inOut",
+        }
+      );
+    },
+    {
+      scope: container,
+    }
+  );
+
+  // const renderLetters = (name: string, key: string) => {
+  //   if (!name) return;
+  //   return name.split("").map((letter, index) => (
+  //     <span
+  //       key={index}
+  //       className={`name-animation name-animation-${key}-index inline-block opacity-0 `}
+  //     >
+  //       {letter}
+  //     </span>
+  //   ));
+  // };
+
   return (
-    <section className="block-space-large bg-mainDark text-white">
-      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="content-center space-y-4">
+    <section className="block-space-large bg-mainDark overflow-hidden text-white">
+      <div
+        className="container grid grid-cols-1 lg:grid-cols-2 gap-8"
+        ref={container}
+      >
+        <div className="content-center space-y-4 md:space-y-8 main-content">
           <span className="flex items-center gap-2">
             {" "}
             <LucideAtom className="text-blue text-4xl" />
@@ -48,7 +109,11 @@ const HeroSection = () => {
           </div>
         </div>
         <div>
-          <Image src={Placeholder} alt="" />
+          <Image
+            src={Placeholder}
+            alt="hero image of botbee illustrating use cases for the product itself"
+            className="animate-image"
+          />
         </div>
       </div>
     </section>
